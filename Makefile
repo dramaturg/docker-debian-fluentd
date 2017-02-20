@@ -8,9 +8,9 @@ push:
 
 run:
 	docker run -d -i -t \
+		-v /sys/fs/cgroup:/sys/fs/cgroup:ro \
 		-v /tmp:/t \
 		-p 514:5014 -p 514:5014/udp -p 8888:8888 \
 		-p 24224:24224 -p 24224:24224/udp \
 		--name=debian-fluentd \
 		dramaturg/debian-fluentd
-
